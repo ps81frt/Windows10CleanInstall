@@ -4,8 +4,8 @@ iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 dotnet tool update --global PowerShell
 $PSVersionTable
 
-Invoke-WebRequest -Uri "https://github.com/microsoft/winget-cli/releases/download/v1.7.10661/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -OutFile "C:\TEMP\WinGet.appxbundle"
-Add-AppxPackage "C:\TEMP\WinGet.appxbundle"
+Invoke-WebRequest -Uri "https://github.com/microsoft/winget-cli/releases/download/v1.7.10661/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -OutFile "C:\Windows\temp\WinGet.appxbundle"
+Add-AppxPackage "C:\Windows\temp\WinGet.appxbundle"
 
 
 # Ahout de la source azure
