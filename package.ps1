@@ -48,6 +48,12 @@ else { "Unable to find provisioned package: $App" }
 }
 
 
+# Powershell 7
+$PSVersionTable.PSVersion
+iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
+dotnet tool update --global PowerShell
+$PSVersionTable
+
 Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
 # Utiliser seulement si version de Windows antérieure ou egale a  "1709 (build 16299)"
 
