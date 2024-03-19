@@ -1,14 +1,14 @@
-# Powershell 7
-$PSVersionTable.PSVersion
-iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
-dotnet tool update --global PowerShell
-$PSVersionTable
+Set-ExecutionPolicy Unrestricted
 
-Invoke-WebRequest -Uri "https://github.com/microsoft/winget-cli/releases/download/v1.7.10661/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -OutFile "C:\Windows\temp\WinGet.appxbundle"
-Add-AppxPackage "C:\Windows\temp\WinGet.appxbundle"
+Get-ExecutionPolicy -List
 
+#Write-Information "Telechargement de winget et de ses dependances..."
 
-# Ahout de la source azure
+#Invoke-WebRequest -Uri https://aka.ms/getwinget -OutFile C:\Temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+#Add-AppxPackage C:\Temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+
+# Ajout de la source azure
+
 winget source add --name winget https://winget.azureedge.net/cache
 
 winget install --id Microsoft.WindowsTerminal
@@ -21,8 +21,9 @@ winget install --id dotPDN.PaintDotNet
 winget install --id 7zip.7zip
 winget install --id ClawsMail.ClawsMail
 
+
 # Powershell 7
-$PSVersionTable.PSVersion
-iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
-dotnet tool update --global PowerShell
-$PSVersionTable
+#$PSVersionTable.PSVersion
+#iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
+#dotnet tool update --global PowerShell
+#$PSVersionTable
