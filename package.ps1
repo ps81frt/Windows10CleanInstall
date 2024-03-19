@@ -54,17 +54,9 @@ iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 dotnet tool update --global PowerShell
 $PSVersionTable
 
-Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
-# Utiliser seulement si version de Windows antérieure ou egale a  "1709 (build 16299)"
+Invoke-WebRequest -Uri "https://github.com/microsoft/winget-cli/releases/download/v1.7.10661/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -OutFile "C:\TEMP\WinGet.appxbundle"
+Add-AppxPackage "C:\TEMP\WinGet.appxbundle"
 
-#$progressPreference = 'silentlyContinue'
-#Write-Information "Downloading WinGet and its dependencies..."
-#Invoke-WebRequest -Uri https://aka.ms/getwinget -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
-#Invoke-WebRequest -Uri https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx -OutFile Microsoft.VCLibs.x64.14.00.Desktop.appx
-#Invoke-WebRequest -Uri https://github.com/microsoft/microsoft-ui-xaml/releases/download/v2.8.6/Microsoft.UI.Xaml.2.8.x64.appx -OutFile Microsoft.UI.Xaml.2.8.x64.appx
-#Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
-#Add-AppxPackage Microsoft.UI.Xaml.2.8.x64.appx
-#Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
 
 # Ahout de la source azure
 winget source add --name winget https://winget.azureedge.net/cache
