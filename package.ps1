@@ -4,7 +4,6 @@ $AppsList = "Microsoft.MicrosoftOfficeHub", # Get Office
 "Microsoft.People", # People
 "Microsoft.CommsPhone", # Phone
 "Microsoft.WindowsPhone", # Phone Companion
-"Microsoft.XboxApp", # Xbox
 "Microsoft.Messaging", # Messaging & Skype
 "Microsoft.Reader" # Microsoft Reader
 "Microsoft.WindowsCamera" # Camera App
@@ -12,7 +11,6 @@ $AppsList = "Microsoft.MicrosoftOfficeHub", # Get Office
 "Microsoft.Office.OneNote" # Microsoft OneNote
 "Microsoft.WindowsStore" # Store App
 "Microsoft.XboxGameOverlay" # Microsoft Xbox Game Overlay
-"Microsoft.Windows.Photos" # Photos app
 "Microsoft.MSPaint" # Microsoft Paint 
 "Microsoft.Windows.ContentDeliveryManager" # Windows Spotlight & Dynamic Content
 "Microsoft.WindowsSoundRecorder" # Microsoft Sound Recorder
@@ -57,4 +55,18 @@ Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
 Add-AppxPackage Microsoft.UI.Xaml.2.8.x64.appx
 Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
 
-winget install Microsoft.WindowsTerminal
+
+winget source add --name winget https://winget.azureedge.net/cache
+
+winget install --id Microsoft.WindowsTerminal
+winget install --id Microsoft.VisualStudioCode
+winget install --id VideoLAN.VLC
+winget install --id 9MSMLRH6LZF3
+winget install --id Flameshot.Flameshot
+winget install --id XPFPGHZZ8M7MMH
+winget install --id dotPDN.PaintDotNet
+winget install --id 7zip.7zip
+winget install --id ClawsMail.ClawsMail
+
+
+
