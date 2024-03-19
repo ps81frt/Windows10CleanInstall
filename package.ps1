@@ -49,6 +49,17 @@ else { "Unable to find provisioned package: $App" }
 
 
 Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
+# Utiliser seulement si version de Windows antérieure ou egale a  "1709 (build 16299)"
+
+#$progressPreference = 'silentlyContinue'
+#Write-Information "Downloading WinGet and its dependencies..."
+#Invoke-WebRequest -Uri https://aka.ms/getwinget -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+#Invoke-WebRequest -Uri https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx -OutFile Microsoft.VCLibs.x64.14.00.Desktop.appx
+#Invoke-WebRequest -Uri https://github.com/microsoft/microsoft-ui-xaml/releases/download/v2.8.6/Microsoft.UI.Xaml.2.8.x64.appx -OutFile Microsoft.UI.Xaml.2.8.x64.appx
+#Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
+#Add-AppxPackage Microsoft.UI.Xaml.2.8.x64.appx
+#Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+
 # Ahout de la source azure
 winget source add --name winget https://winget.azureedge.net/cache
 
@@ -61,30 +72,4 @@ winget install --id XPFPGHZZ8M7MMH
 winget install --id dotPDN.PaintDotNet
 winget install --id 7zip.7zip
 winget install --id ClawsMail.ClawsMail
-
-# Utiliser seulement si version de Windows antérieure ou egale a  "1709 (build 16299)"
-
-#$progressPreference = 'silentlyContinue'
-#Write-Information "Downloading WinGet and its dependencies..."
-#Invoke-WebRequest -Uri https://aka.ms/getwinget -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
-#Invoke-WebRequest -Uri https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx -OutFile Microsoft.VCLibs.x64.14.00.Desktop.appx
-#Invoke-WebRequest -Uri https://github.com/microsoft/microsoft-ui-xaml/releases/download/v2.8.6/Microsoft.UI.Xaml.2.8.x64.appx -OutFile Microsoft.UI.Xaml.2.8.x64.appx
-#Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
-#Add-AppxPackage Microsoft.UI.Xaml.2.8.x64.appx
-#Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
-
-
-winget source add --name winget https://winget.azureedge.net/cache
-
-winget install --id Microsoft.WindowsTerminal
-winget install --id Microsoft.VisualStudioCode
-winget install --id VideoLAN.VLC
-winget install --id 9MSMLRH6LZF3
-winget install --id Flameshot.Flameshot
-winget install --id XPFPGHZZ8M7MMH
-winget install --id dotPDN.PaintDotNet
-winget install --id 7zip.7zip
-winget install --id ClawsMail.ClawsMail
-
-
 
